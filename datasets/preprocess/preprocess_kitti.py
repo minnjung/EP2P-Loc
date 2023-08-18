@@ -35,10 +35,11 @@ img_collect_distance = args.img_collect_distance
 camera_idx = args.camera_idx
 
 exist_ok = args.exist_ok
-save_path = args.save_path
+data_path = os.path.abspath(args.data_path)
+save_path = os.path.abspath(args.save_path)
 
 
-dataset = KITTI(dataset_path=args.data_path, pose_mode='lidar0')
+dataset = KITTI(dataset_path=data_path, pose_mode='lidar0')
 if not exist_ok:
     os.system('rm -rf %s'%save_path)
 

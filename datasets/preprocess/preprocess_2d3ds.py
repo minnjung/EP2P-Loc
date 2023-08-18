@@ -13,7 +13,7 @@ from dataset_classes import s2d3ds
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_path', default='./data/2d-3d-s', type=str, help='2D-3D-S dataset folder')
 parser.add_argument('--s3dis_path', default='./data/s3dis', type=str, help='S3DIS dataset folder')
-parser.add_argument('--cache_path', default='./data/cache', type=str, help='cache folder (optional)')
+parser.add_argument('--cache_path', default=None, type=str, help='cache folder for faster rebuild (optional)')
 parser.add_argument('--save_path', default='./dataset/2d-3d-s', type=str, help='folder to save processed files')
 parser.add_argument('--use_depth', default='5', type=str, help='list of areas to use depth map(RGB-D)')
 
@@ -30,10 +30,10 @@ parser.add_argument('--process', default=16, type=int, help='number of processes
 parser.add_argument('--exist_ok', default=True, type=bool, help='continue preprocessing if files exist')
 args = parser.parse_args()
 
-data_path = args.data_path
-s3dis_path = args.s3dis_path
-cache_path = args.cache_path
-save_path = args.save_path
+data_path = os.path.abspath(args.data_path)
+s3dis_path = os.path.abspath(args.s3dis_path)
+cache_path = os.path.abspath(args.cache_path) if isinstance(args.cache_path, str) else None
+save_path = os.path.abspath(args.save_path)
 use_depth = args.use_depth
 
 visible_distance = args.visible_distance

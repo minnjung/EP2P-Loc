@@ -6,15 +6,19 @@ Visual localization is the task of estimating a 6-DoF camera pose of a query ima
 
 ## Requirements
 * Ubuntu 16.04
-* Python 3.8
+* Python 3.6
 ```
+conda create -n ep2ploc python=3.6
+conda activate ep2ploc
+
 pip install -r requirements.txt
+conda install -c sirokujira python-pcl --channel conda-forge
 ```
 
 
 ## Dataset
 ### Download datasets
-* [2D-3D-S and S3DIS](http://buildingparser.stanford.edu/dataset.html)
+* [2D-3D-S and (Aligned) S3DIS](http://buildingparser.stanford.edu/dataset.html)
 * [KITTI](https://www.cvlibs.net/datasets/kitti/eval_odometry.php)
 
 
@@ -23,11 +27,19 @@ pip install -r requirements.txt
 cd datasets
 
 # 2D-3D-S
-python preprocess_2d3ds.py --data_path <2D-3D-S_path> --s3dis_path <S3DIS_path> --cache_path <cache_path> --save_path <save_path>
+python preprocess_2d3ds.py --data_path <2D-3D-S_path> --s3dis_path <S3DIS_path> --cache_path <cache_path(optional)> --save_path <save_path>
 
 # KITTI
 python preprocess_kitti.py --data_path <KITTI_path> --save_path <save_path>
 ```
+
+
+## Training
+Coming soon!
+
+
+## Test
+Coming soon!
 
 
 ## Citation
