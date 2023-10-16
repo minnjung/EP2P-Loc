@@ -5,7 +5,7 @@ Official repository of ["EP2P-Loc: End-to-End 3D Point to 2D Pixel Localization 
 
 We propose **EP2P-Loc**, a novel large-scale visual localization method that mitigates such appearance discrepancy and enables end-to-end training for pose estimation. This repository is built upon the foundations of [Swin-Transformer](https://github.com/SwinTransformer/Transformer-SSL), [Fast Point Transformer](https://github.com/POSTECH-CVLab/FastPointTransformer), and [EPro-PnP](https://github.com/tjiiv-cprg/EPro-PnP).
 
-**updates**
+**Updates**
 - Aug 18, 2023: Release benchmark datasets
 - Jul 18, 2023: Initial commit
 
@@ -41,7 +41,7 @@ python preprocess_kitti.py --data_path <KITTI_path> --save_path <save_path>
 
 
 ## Training and Testing
-Coming soon!
+TBU
 
 
 ## Citation
@@ -53,11 +53,3 @@ Coming soon!
   year = {2023}
 }
 ```
-
-
-## TODO
-* OS / Python / Requirements check
-* (shorter) model explanation
-* (higher) images/network.png resolution
-* code results (table, graph, image, ...)
-* code running script/command
